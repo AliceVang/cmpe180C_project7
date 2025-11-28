@@ -7,7 +7,7 @@
 
 int main (int argc, char *argv[]){
 	int opt;
-	while((opt = getopt(argc,argv, "p:c:m:q:u:s:")) != -1){
+	while((opt = getopt(argc,argv, "pcm:q:use")) != -1){
 		switch(opt){
 			case'p':	// producer
 				printf("case p\n");
@@ -26,6 +26,9 @@ int main (int argc, char *argv[]){
 				break;
 			case 's':	// shared memory
 				printf("case s\n");
+				break;
+			case 'e':	// print the string being produced/consumed + \n
+				printf("case e\n");
 				break;
 			default:
 				fprintf(stderr, "Error: Unknown option.\n");
